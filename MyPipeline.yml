@@ -1,0 +1,51 @@
+name: Python CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: peter-evans/python-setup@v2
+
+      - name: Run linter
+        uses: peter-evans/python-linter@v2
+        with:
+          working-directory: python-api-handle-it/app  # Spécifiez le chemin vers votre application Python
+
+      - name: Check for copier-coller
+        uses: pycqa/flake8-action@v2
+        with:
+          working-directory: python-api-handle-it/app  # Spécifiez le chemin vers votre application Python
+
+      - name: Analyze cyclomatic complexity
+        uses: wemake-services/wemake-python-styleguide@0.15.1
+        with:
+          working-directory: python-api-handle-it/app  # Spécifiez le chemin vers votre application Python
+
+      - name: Run tests
+        uses: pytest-dev/pytest-action@v2
+        with:
+          working-directory: python-api-handle-it/app  # Spécifiez le chemin vers votre application Python
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: python-api-handle-it/app # Spécifiez le chemin vers votre application Python
+          push: true
+          tags: mansoursou/imageTP3:latest
+
+      - name: Cleanup
+        run: |
+          docker rmi -f $(docker images -q)
