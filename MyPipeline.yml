@@ -21,8 +21,7 @@ jobs:
 
       - name: Run linter
         uses: peter-evans/python-linter@v2
-        with:
-          working-directory: python-api-handle-it/app  # Spécifiez le chemin vers votre application Python
+
 
       - name: Check for copier-coller
         uses: pycqa/flake8-action@v2
