@@ -19,11 +19,15 @@ jobs:
       - name: Set up Python
         uses: peter-evans/python-setup@v2
 
-      - name: Run linter
-        uses: peter-evans/python-linter@v2
-        with:
-          working-directory: ${{ github.workspace }}/python-api-handle-it/app
+      - name: Install dependencies
+        run: |
+          pip install flake8
+        working-directory: python-api-handle-it/app  # Spécifiez le chemin vers votre code Python
 
+      - name: Run Flake8 linter
+        run: |
+          flake8
+        working-directory: python-api-handle-it/app  # Spécifiez le chemin vers votre code Python
 
 
       - name: Check for copier-coller
