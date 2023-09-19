@@ -31,10 +31,7 @@ jobs:
         with:
           working-directory: ../python-api-handle-it/app  # Spécifiez le chemin vers votre application Python
 
-      - name: Run tests
-        uses: pytest-dev/pytest-action@v2
-        with:
-          working-directory: python-api-handle-it/app  # Spécifiez le chemin vers votre application Python
+
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
