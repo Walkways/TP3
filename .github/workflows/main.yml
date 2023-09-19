@@ -21,11 +21,10 @@ jobs:
         with:
           python-version: 3.x  # Spécifiez la version de Python que vous utilisez
 
-      
-
-      - name: Lint Action
-        uses: wearerequired/lint-action@v2.3.0
-            
+      - name: Run tests with pytest
+        run: |
+          pytest
+        working-directory: python-api-handle-it/app
 
       - name: Analyze cyclomatic complexity
         uses: wemake-services/wemake-python-styleguide@0.15.1
