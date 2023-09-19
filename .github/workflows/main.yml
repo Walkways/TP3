@@ -19,28 +19,28 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.13  # Spécifiez la version de Python que vous utilisez
+          python-version: 3.x  # Spécifiez la version de Python que vous utilisez
 
       - name: Install dependencies
         run: |
           pip install flake8
-        working-directory: python-api-handle-it/app  # Spécifiez le chemin vers votre code Python
+        working-directory: ../python-api-handle-it/app  # Spécifiez le chemin vers votre code Python
 
       - name: Run Flake8 linter
         run: |
           flake8
-        working-directory: python-api-handle-it/app  # Spécifiez le chemin vers votre code Python
+        working-directory: ../python-api-handle-it/app  # Spécifiez le chemin vers votre code Python
 
 
       - name: Check for copier-coller
         uses: pycqa/flake8-action@v2
         with:
-          working-directory: python-api-handle-it/app  # Spécifiez le chemin vers votre application Python
+          working-directory: ../python-api-handle-it/app  # Spécifiez le chemin vers votre application Python
 
       - name: Analyze cyclomatic complexity
         uses: wemake-services/wemake-python-styleguide@0.15.1
         with:
-          working-directory: python-api-handle-it/app  # Spécifiez le chemin vers votre application Python
+          working-directory: ../python-api-handle-it/app  # Spécifiez le chemin vers votre application Python
 
       - name: Run tests
         uses: pytest-dev/pytest-action@v2
