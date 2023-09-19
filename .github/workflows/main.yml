@@ -21,19 +21,11 @@ jobs:
         with:
           python-version: 3.x  # Spécifiez la version de Python que vous utilisez
 
-      - name: Install dependencies
-        run: |
-          pip install flake8
-        working-directory: ../python-api-handle-it/app  # Spécifiez le chemin vers votre code Python
+      
 
-      - name: flake8 Lint
-        uses: py-actions/flake8@v2
-
-
-      - name: Check for copier-coller
-        uses: pycqa/flake8-action@v2
-        with:
-          working-directory: ../python-api-handle-it/app  # Spécifiez le chemin vers votre application Python
+      - name: Lint Action
+        uses: wearerequired/lint-action@v2.3.0
+            
 
       - name: Analyze cyclomatic complexity
         uses: wemake-services/wemake-python-styleguide@0.15.1
