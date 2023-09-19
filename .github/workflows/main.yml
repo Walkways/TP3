@@ -21,6 +21,9 @@ jobs:
 
       - name: Run linter
         uses: peter-evans/python-linter@v2
+        with:
+          working-directory: ${{ github.workspace }}/python-api-handle-it/app
+
 
 
       - name: Check for copier-coller
