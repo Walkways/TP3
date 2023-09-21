@@ -1,7 +1,7 @@
 import json
 import pytest
 from flask import Flask
-from your_module import app
+from main import app
 
 # Créez un client de test Flask pour interagir avec l'application
 @pytest.fixture
