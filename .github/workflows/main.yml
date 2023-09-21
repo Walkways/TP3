@@ -30,7 +30,7 @@ jobs:
       - name: Run tests with pytest
         run: |
           pytest
-        working-directory: python-api-handle-it/app
+        working-directory: python-api-handle-it/app/test/unit
 
       - name: Analyze cyclomatic complexity
         uses: wemake-services/wemake-python-styleguide@0.15.1
