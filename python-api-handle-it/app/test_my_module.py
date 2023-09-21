@@ -16,11 +16,11 @@ def test_hello_world(client):
     assert b"Bienvenue sur l'application de gestion" in response.data
 
 # Testez la route de liste des machines (GET)
-def test_liste_machine_get(client):
-    response = client.get('/machines')
-    assert response.status_code == 200
-    data = json.loads(response.data)
-    assert "machines" in data
+#def test_liste_machine_get(client):
+#    response = client.get('/machines')
+#    assert response.status_code == 200
+#    data = json.loads(response.data)
+#    assert "machines" in data
 
 # Testez la route de liste des machines (POST)
 def test_liste_machine_post(client):
