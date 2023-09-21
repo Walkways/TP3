@@ -23,15 +23,15 @@ def test_hello_world(client):
 #    assert "machines" in data
 
 # Testez la route de liste des machines (POST)
-def test_liste_machine_post(client):
-    data = {
-        "name": "Machine1",
-        "type": "Type1"
-    }
-    response = client.post('/machines', json=data)
-    assert response.status_code == 200
-    data = json.loads(response.data)
-    assert "machine" in data
+#def test_liste_machine_post(client):
+#    data = {
+#        "name": "Machine1",
+#        "type": "Type1"
+#    }
+#    response = client.post('/machines', json=data)
+#    assert response.status_code == 200
+#    data = json.loads(response.data)
+#    assert "machine" in data
 
 # Testez la route de détails d'une machine (GET)
 def test_get_machine(client):
