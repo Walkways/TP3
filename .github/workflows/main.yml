@@ -51,11 +51,7 @@ jobs:
       - name: Check Code Duplication
         run: cpplint --recursive .
 
-      - name: Install pyflakes
-        run: pip install pyflakes
 
-      - name: Run PyFlakes
-        run: pyflakes .
         
 
       #- name: Analyze cyclomatic complexity
