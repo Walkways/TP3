@@ -44,6 +44,12 @@ jobs:
 
       - name: Analyze Cyclomatic Complexity
         run: radon cc -s -a -e "venv/*" .
+
+      - name: Install cpplint
+        run: pip install cpplint
+
+      - name: Check Code Duplication
+        run: cpplint --recursive .
         
 
       #- name: Analyze cyclomatic complexity
