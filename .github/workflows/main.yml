@@ -66,7 +66,7 @@ jobs:
         with:
           context: python-api-handle-it/app # Spécifiez le chemin vers votre application Python
           push: true
-          tags: mansoursou/imageTP3:latest
+          tags: mansoursou/imagetp3:latest
 
       - name: Cleanup
         run: |
