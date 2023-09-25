@@ -37,7 +37,7 @@ jobs:
 
       - name: Run Flake8
         run: flake8
-        #working-directory: python-api-handle-it/app/
+        working-directory: python-api-handle-it/app/
 
       - name: Analyze cyclomatic complexity
         uses: wemake-services/wemake-python-styleguide@0.15.1
