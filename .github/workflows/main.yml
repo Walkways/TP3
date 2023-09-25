@@ -39,8 +39,15 @@ jobs:
         run: flake8 --exclude=test_my_module.py
         working-directory: python-api-handle-it/app/
 
-      - name: Analyze cyclomatic complexity
-        uses: wemake-services/wemake-python-styleguide@0.15.1
+      - name: Install radon
+        run: pip install radon
+
+      - name: Analyze Cyclomatic Complexity
+        run: radon cc -s -a -e "venv/*" .
+        
+
+      #- name: Analyze cyclomatic complexity
+      #  uses: wemake-services/wemake-python-styleguide@0.15.1
         #with:
           #working-directory: ../python-api-handle-it/app  # Spécifiez le chemin vers votre application Python
 
