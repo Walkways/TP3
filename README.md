@@ -19,6 +19,8 @@ Contient le programme principal
 
 .github/workflows/main.yml
 Contient le pipeline d'intégration continue
+
+Ce pipeline se déclenche automatiquement à chaque 'commit' sur le depôt.
 ___________________________________________________________________________________________
 
 Description des pré-requis:
