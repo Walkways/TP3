@@ -23,4 +23,4 @@ ________________________________________________________________________________
 
 Description des pré-requis:
 
-Seulement avoir un compte Docker Hub pour acceuilir l'image docker generée, car tous les fichiers nécessaire sont dans le Repos.
+Seulement avoir un compte Docker Hub pour acceuilir l'image docker generée, car tous les fichiers nécessaires sont dans le Repos.
